@@ -17,7 +17,9 @@ const Programs = () => {
         "2 sessions per week"
       ],
       price: "Monthly",
-      image: "/src/assets/images/programs/beginners.jpg"
+      image: "/src/assets/images/programs/beginners.jpg",
+      ageRange: "8-10 years",
+      slug: "beginners"
     },
     {
       title: "Intermediate (11-13)",
@@ -30,7 +32,9 @@ const Programs = () => {
         "3 sessions per week"
       ],
       price: "Monthly",
-      image: "/src/assets/images/programs/intermediate.jpg"
+      image: "/src/assets/images/programs/intermediate.jpg",
+      ageRange: "11-13 years",
+      slug: "intermediate"
     },
     {
       title: "Advanced (14-15)",
@@ -43,7 +47,9 @@ const Programs = () => {
         "4-5 sessions per week"
       ],
       price: "Monthly",
-      image: "/src/assets/images/programs/advanced.jpg"
+      image: "/src/assets/images/programs/advanced.jpg",
+      ageRange: "14-15 years",
+      slug: "advanced"
     },
     {
       title: "Championship Training",
@@ -56,7 +62,9 @@ const Programs = () => {
         "Customized schedule"
       ],
       price: "Monthly",
-      image: "/src/assets/images/programs/championship.jpg"
+      image: "/src/assets/images/programs/championship.jpg",
+      ageRange: "14-15 years",
+      slug: "championship"
     },
     {
       title: "Private Sessions",
@@ -69,7 +77,9 @@ const Programs = () => {
         "Progress tracking"
       ],
       price: "Per Session",
-      image: "/src/assets/images/programs/private.jpg"
+      image: "/src/assets/images/programs/private.jpg",
+      ageRange: "8-15 years",
+      slug: "private"
     }
   ];
   
@@ -99,6 +109,8 @@ const Programs = () => {
               price={program.price}
               image={program.image}
               index={index}
+              ageRange={program.ageRange}
+              slug={program.slug}
             />
           ))}
         </div>
