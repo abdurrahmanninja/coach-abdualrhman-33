@@ -1,10 +1,9 @@
-
 import { useState } from 'react';
 
 interface GalleryCardProps {
   image: string;
   title: string;
-  description?: string;
+  description: string;
   index: number;
 }
 
@@ -22,7 +21,7 @@ const GalleryCard = ({ image, title, description, index }: GalleryCardProps) => 
     >
       <div className="aspect-w-4 aspect-h-3">
         <img 
-          src={image} 
+          src={`/src/assets/images/home-gallery/${index + 1}.jpg`}
           alt={title} 
           className={`w-full h-full object-cover transition-transform duration-500 ${isHovered ? 'scale-110' : 'scale-100'}`}
         />

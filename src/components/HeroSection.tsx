@@ -1,4 +1,3 @@
-
 import { ArrowRight } from 'lucide-react';
 import { Link } from 'react-router-dom';
 
@@ -13,7 +12,7 @@ interface HeroSectionProps {
 const HeroSection = ({
   title,
   subtitle,
-  backgroundImage = "https://images.unsplash.com/photo-1517438322307-e67111335449?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1920&q=80",
+  backgroundImage = "/src/assets/images/hero/backgroundHero.jpg",
   buttonText = "Learn More",
   buttonLink = "/about",
 }: HeroSectionProps) => {
@@ -35,13 +34,16 @@ const HeroSection = ({
         <p className="text-xl md:text-2xl max-w-3xl mx-auto mb-8 animate-fade-in-up animate-delay-100">
           {subtitle}
         </p>
-        <Link 
-          to={buttonLink}
-          className="inline-flex items-center bg-coach-red hover:bg-red-600 text-white font-bold py-3 px-8 rounded-md transition-all duration-300 animate-fade-in-up animate-delay-200"
-        >
-          {buttonText}
-          <ArrowRight className="ml-2" size={20} />
-        </Link>
+        <div className="flex flex-col sm:flex-row gap-4 justify-center">
+          <a
+            href="https://wa.me/905395900154"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="btn-primary"
+          >
+            {buttonText || "Start Training"}
+          </a>
+        </div>
       </div>
       
       {/* Decorative elements */}

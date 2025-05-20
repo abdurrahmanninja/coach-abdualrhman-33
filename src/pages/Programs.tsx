@@ -1,4 +1,3 @@
-
 import HeroSection from '@/components/HeroSection';
 import ProgramCard from '@/components/ProgramCard';
 import TestimonialCard from '@/components/TestimonialCard';
@@ -9,95 +8,68 @@ const Programs = () => {
   const programs = [
     {
       title: "Beginners (8-10)",
-      description: "Introduction to martial arts fundamentals in a fun, supportive environment. Focused on basic techniques, coordination development, and building core strength.",
-      image: "/placeholder.svg",
-      price: "$120",
-      ageRange: "8-10 years",
+      description: "Perfect for young athletes starting their journey. Focus on basic techniques, coordination, and building confidence.",
       features: [
-        "2 sessions per week (60 minutes each)",
         "Basic technique training",
-        "Focus on coordination and balance",
-        "Fun group activities and games",
-        "Introduction to discipline and respect",
-        "Quarterly progress evaluations"
+        "Coordination development",
+        "Fun and engaging activities",
+        "Safety-first approach",
+        "2 sessions per week"
       ],
-      slug: "beginners",
-      color: "blue"
+      price: "Monthly",
+      image: "/src/assets/images/programs/beginners.jpg"
     },
     {
       title: "Intermediate (11-13)",
-      description: "Building on fundamentals with more advanced techniques and the introduction of competitive elements. Develops physical abilities and mental focus.",
-      image: "/placeholder.svg",
-      price: "$150",
-      ageRange: "11-13 years",
+      description: "For athletes ready to advance their skills. Emphasis on technique refinement and competition preparation.",
       features: [
-        "3 sessions per week (75 minutes each)",
         "Advanced technique training",
-        "Introduction to sparring practices",
         "Competition preparation",
-        "Physical conditioning focus",
-        "Mental resilience training",
-        "Monthly progress evaluations"
+        "Physical conditioning",
+        "Mental strength development",
+        "3 sessions per week"
       ],
-      slug: "intermediate",
-      color: "red"
+      price: "Monthly",
+      image: "/src/assets/images/programs/intermediate.jpg"
     },
     {
       title: "Advanced (14-15)",
-      description: "Elite training for serious competitors preparing for championships with personalized coaching and comprehensive development plans.",
-      image: "/placeholder.svg",
-      price: "$180",
-      ageRange: "14-15 years",
+      description: "Intensive training for serious competitors. Focus on advanced techniques, strategy, and championship preparation.",
       features: [
-        "4 sessions per week (90 minutes each)",
-        "Elite technique refinement",
-        "Regular sparring practice",
-        "Competition strategy development",
-        "Personalized training plans",
-        "Video analysis of techniques",
-        "Strength and conditioning program",
-        "Recovery and nutrition guidance"
+        "Elite technique training",
+        "Championship preparation",
+        "Advanced conditioning",
+        "Strategy development",
+        "4-5 sessions per week"
       ],
-      slug: "advanced",
-      color: "yellow"
+      price: "Monthly",
+      image: "/src/assets/images/programs/advanced.jpg"
     },
     {
       title: "Championship Training",
-      description: "Specialized program for athletes preparing for national and international competitions with intensive, personalized training.",
-      image: "/placeholder.svg",
-      price: "$220",
-      ageRange: "10-15 years (by qualification)",
+      description: "Specialized program for competitive athletes. Comprehensive training for national and international competitions.",
       features: [
-        "5 sessions per week (customized duration)",
-        "One-on-one technique coaching",
-        "Competition-specific preparation",
-        "Advanced strategy development",
-        "Mental performance coaching",
-        "Detailed performance analysis",
-        "Nutrition and recovery planning",
-        "Competition scheduling support"
+        "Competition-specific training",
+        "Intensive conditioning",
+        "Mental preparation",
+        "Video analysis",
+        "Customized schedule"
       ],
-      slug: "championship",
-      color: "blue"
+      price: "Monthly",
+      image: "/src/assets/images/programs/championship.jpg"
     },
     {
       title: "Private Sessions",
-      description: "Personalized one-on-one training sessions tailored to individual needs, goals, and learning pace with direct coach attention.",
-      image: "/placeholder.svg",
-      price: "Custom",
-      ageRange: "8-15 years",
+      description: "One-on-one training for personalized attention. Perfect for athletes seeking focused improvement.",
       features: [
-        "Flexible scheduling options",
-        "Completely personalized curriculum",
-        "Focused technique refinement",
-        "Goal-specific training plans",
-        "Detailed progress tracking",
-        "Video analysis and feedback",
-        "Parent consultation sessions",
-        "Can be combined with group programs"
+        "Personalized training",
+        "Flexible scheduling",
+        "Individual attention",
+        "Customized program",
+        "Progress tracking"
       ],
-      slug: "private",
-      color: "red"
+      price: "Per Session",
+      image: "/src/assets/images/programs/private.jpg"
     }
   ];
   
@@ -105,16 +77,15 @@ const Programs = () => {
     <>
       <HeroSection
         title="TRAINING PROGRAMS"
-        subtitle="Comprehensive training programs tailored for different age groups and skill levels"
-        backgroundImage="https://images.unsplash.com/photo-1599058918144-1ffabb6ab9a0?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1920&q=80"
+        subtitle="Specialized programs designed for different age groups and skill levels"
+        backgroundImage="/src/assets/images/hero/backgroundHero.jpg"
       />
       
-      {/* Programs Overview Section */}
       <section className="container-custom">
-        <div className="text-center mb-16">
-          <h2 className="section-title">Our Training Programs</h2>
+        <div className="text-center mb-12">
+          <h2 className="section-title">Our Programs</h2>
           <p className="section-subtitle">
-            Structured training designed to develop skills, discipline, and confidence in young fighters
+            Choose the program that best fits your child's age and goals
           </p>
         </div>
         
@@ -124,13 +95,10 @@ const Programs = () => {
               key={index}
               title={program.title}
               description={program.description}
-              image={program.image}
-              price={program.price}
-              ageRange={program.ageRange}
               features={program.features}
-              slug={program.slug}
+              price={program.price}
+              image={program.image}
               index={index}
-              color={program.color as 'blue' | 'red' | 'yellow'}
             />
           ))}
         </div>
@@ -213,84 +181,24 @@ const Programs = () => {
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
           <TestimonialCard
             quote="The structured program has done wonders for my son's confidence. He's gone from being shy to speaking up in class and has even started helping younger kids. The discipline he's learned has carried over to his schoolwork too."
-            author="Amanda Johnson"
-            role="Parent of Michael, 12"
+            author="أحمد محمد"
+            role="Parent of Omar, 12"
             index={0}
           />
           
           <TestimonialCard
             quote="I was looking for more than just physical training for my daughter. This program delivers on character development, mental strength, and technical skills. She's learned to face challenges head-on, both in competitions and in life."
-            author="Robert Chen"
-            role="Parent of Lily, 14"
+            author="فاطمة علي"
+            role="Parent of Anas, 14"
             index={1}
           />
           
           <TestimonialCard
             quote="After trying several other martial arts schools, we found the perfect fit here. The championship program has helped my son improve rapidly and he just earned his first national medal. The coaches truly understand how to develop young athletes properly."
-            author="Thomas Williams"
-            role="Parent of Jacob, 15"
+            author="خالد عبدالله"
+            role="Parent of Zain, 15"
             index={2}
           />
-        </div>
-      </section>
-      
-      {/* FAQ Section */}
-      <section className="bg-gray-100 py-16 md:py-24">
-        <div className="container mx-auto px-4 max-w-4xl">
-          <div className="text-center mb-16">
-            <h2 className="section-title">Frequently Asked Questions</h2>
-            <p className="section-subtitle">
-              Common questions about our training programs
-            </p>
-          </div>
-          
-          <div className="space-y-8">
-            {[
-              {
-                question: "What equipment or gear does my child need?",
-                answer: "Beginners only need comfortable athletic clothing to start. As they progress, we'll provide a list of recommended equipment including protective gear, uniform, and training accessories. Many items are available through our pro shop at a discounted rate for students."
-              },
-              {
-                question: "Is previous experience required to join?",
-                answer: "No prior experience is required for our beginners programs. We start with fundamentals and progress at a pace appropriate for each student. For intermediate and advanced programs, we conduct an assessment to determine the appropriate placement."
-              },
-              {
-                question: "How do you ensure safety during training?",
-                answer: "Safety is our top priority. We maintain appropriate student-to-instructor ratios, use quality safety equipment, follow progressive training methods, and all coaches are certified in first aid and CPR. Our facilities are regularly inspected and maintained to prevent hazards."
-              },
-              {
-                question: "What's the process for joining competitions?",
-                answer: "Students are eligible for competition once they've mastered the required techniques and demonstrated appropriate physical and mental readiness. We first introduce local exhibitions, then progress to regional and national competitions based on the student's development and goals."
-              },
-              {
-                question: "Can parents watch training sessions?",
-                answer: "Yes, we have a designated viewing area where parents can observe classes. We also host regular parent observation days where coaches explain the training methodology and answer questions. For championship training, we schedule regular parent-coach meetings to discuss progress."
-              }
-            ].map((faq, index) => (
-              <div key={index} className="bg-white rounded-lg shadow-md p-6 opacity-0 animate-fade-in-up" style={{ animationDelay: `${index * 100}ms` }}>
-                <h3 className="text-xl font-bold mb-3">{faq.question}</h3>
-                <p className="text-gray-600">{faq.answer}</p>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-      
-      {/* CTA Section */}
-      <section className="container mx-auto px-4 py-16 max-w-4xl text-center">
-        <div className="bg-gradient-to-r from-coach-blue to-coach-darkBlue rounded-lg p-12 text-white">
-          <h2 className="text-3xl md:text-4xl font-bold mb-6">Ready to Get Started?</h2>
-          <p className="text-xl mb-8 text-white/90">
-            Join our champion community and start your child's journey to excellence today
-          </p>
-          <div className="flex flex-col sm:flex-row justify-center gap-4">
-            <Link to="/contact" className="btn-accent">
-              Schedule a Free Trial
-            </Link>
-            <Link to="/contact" className="text-white border-2 border-white hover:bg-white hover:text-coach-blue transition-colors font-semibold py-3 px-6 rounded-md">
-              Contact Us
-            </Link>
-          </div>
         </div>
       </section>
     </>

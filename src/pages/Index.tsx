@@ -1,4 +1,3 @@
-
 import { useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import HeroSection from '@/components/HeroSection';
@@ -35,7 +34,7 @@ const Index = () => {
       <HeroSection
         title="TRAIN LIKE A CHAMPION"
         subtitle="Professional fighting coach specialized in training young champions for national and international competitions."
-        backgroundImage="https://images.unsplash.com/photo-1517438322307-e67111335449?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1920&q=80"
+        backgroundImage="/src/assets/images/hero/background.jpg"
         buttonText="Start Your Journey"
         buttonLink="/contact"
       />
@@ -59,7 +58,7 @@ const Index = () => {
           <div className="relative reveal-on-scroll opacity-0">
             <div className="aspect-w-4 aspect-h-5 rounded-lg overflow-hidden shadow-xl">
               <img 
-                src="https://images.unsplash.com/photo-1590556409324-aa1d726e5c3c?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1080&q=80"
+                src="/src/assets/images/hero/building.jpg"
                 alt="Coach teaching martial arts" 
                 className="object-cover w-full h-full"
               />
@@ -158,21 +157,21 @@ const Index = () => {
         
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
           <GalleryCard
-            image="https://images.unsplash.com/photo-1574006289228-69c8e8206e78?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=80"
+            image="/src/assets/images/home-gallery/1.jpg"
             title="Championship Finals"
             description="Our students competing at the national championship"
             index={0}
           />
           
           <GalleryCard
-            image="https://images.unsplash.com/photo-1599058917765-a780eda07a3e?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=80"
+            image="/src/assets/images/home-gallery/2.jpg"
             title="Group Training"
             description="Weekly group training session for intermediate students"
             index={1}
           />
           
           <GalleryCard
-            image="https://images.unsplash.com/photo-1555597673-b21d5c935865?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=80"
+            image="/src/assets/images/home-gallery/3.jpg"
             title="One-on-One Coaching"
             description="Personalized technique refinement with advanced students"
             index={2}
@@ -200,22 +199,22 @@ const Index = () => {
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
             <TestimonialCard
               quote="My son has transformed not just physically, but mentally too. His confidence has soared since joining the advanced program. The discipline he's learned extends to his schoolwork too!"
-              author="Jennifer Miller"
-              role="Parent of Alex, 14"
+              author="عبدالله محمد"
+              role="Parent of Youssef, 14"
               index={0}
             />
             
             <TestimonialCard
               quote="The coach has a gift for connecting with kids. My daughter was shy at first, but now she's thriving in competitions and has made great friends. The positive environment makes all the difference."
-              author="Michael Thompson"
-              role="Parent of Sophia, 12"
+              author="نورا أحمد"
+              role="Parent of Mohammed, 12"
               index={1}
             />
             
             <TestimonialCard
               quote="We tried several other programs before finding this one. The difference is the focus on both technical skills and character development. My son just won his first regional championship!"
-              author="Sarah Johnson"
-              role="Parent of Ethan, 10"
+              author="محمد علي"
+              role="Parent of Karim, 10"
               index={2}
             />
           </div>

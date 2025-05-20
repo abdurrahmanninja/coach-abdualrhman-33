@@ -1,7 +1,7 @@
-
 import { useState, useEffect } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import { Menu, X } from 'lucide-react';
+import ThemeToggle from './ThemeToggle';
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -34,7 +34,6 @@ const Navbar = () => {
     { name: 'Home', path: '/' },
     { name: 'About', path: '/about' },
     { name: 'Gallery', path: '/gallery' },
-    { name: 'Videos', path: '/videos' },
     { name: 'Blog', path: '/blog' },
     { name: 'Programs', path: '/programs' },
     { name: 'Contact', path: '/contact' },
@@ -45,11 +44,11 @@ const Navbar = () => {
   };
 
   return (
-    <header className={`fixed top-0 w-full z-50 transition-all duration-300 ${scrolled ? 'bg-white shadow-md py-2' : 'bg-transparent py-4'}`}>
+    <header className={`fixed top-0 w-full z-50 transition-all duration-300 ${scrolled ? 'bg-white dark:bg-coach-dark-card shadow-md py-2' : 'bg-transparent py-4'}`}>
       <div className="container mx-auto px-4 flex justify-between items-center">
         <Link to="/" className="flex items-center">
-          <span className="font-display text-2xl font-bold text-coach-blue">CHAMPION</span>
-          <span className="font-display text-2xl font-bold text-coach-red">COACH</span>
+          <span className="font-display text-2xl font-bold text-coach-blue">COACH</span>
+          <span className="font-display text-2xl font-bold text-coach-red">NINJA</span>
         </Link>
 
         {/* Desktop Navigation */}
@@ -63,31 +62,35 @@ const Navbar = () => {
               {link.name}
             </Link>
           ))}
+          <ThemeToggle />
           <Link to="/contact" className="btn-primary ml-4">
             Start Training
           </Link>
         </nav>
 
         {/* Mobile Menu Button */}
-        <button
-          onClick={toggleMenu}
-          className="md:hidden text-gray-700 focus:outline-none"
-          aria-label="Toggle menu"
-        >
-          {isOpen ? <X size={24} /> : <Menu size={24} />}
-        </button>
+        <div className="md:hidden flex items-center space-x-4">
+          <ThemeToggle />
+          <button
+            onClick={toggleMenu}
+            className="text-gray-700 dark:text-coach-dark-text-secondary focus:outline-none"
+            aria-label="Toggle menu"
+          >
+            {isOpen ? <X size={24} /> : <Menu size={24} />}
+          </button>
+        </div>
       </div>
 
       {/* Mobile Navigation */}
       {isOpen && (
-        <div className="md:hidden bg-white shadow-lg">
+        <div className="md:hidden bg-white dark:bg-coach-dark-card shadow-lg border-t border-gray-200 dark:border-coach-dark-border">
           <div className="container mx-auto px-4 py-3">
             <nav className="flex flex-col space-y-4">
               {navLinks.map((link) => (
                 <Link
                   key={link.name}
                   to={link.path}
-                  className={isActive(link.path)}
+                  className={`${isActive(link.path)} dark:text-coach-dark-text-secondary dark:hover:text-coach-blue`}
                 >
                   {link.name}
                 </Link>
