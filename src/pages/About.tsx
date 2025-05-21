@@ -1,13 +1,20 @@
 import HeroSection from '@/components/HeroSection';
+import { getAssetPath } from '@/lib/utils';
 
 const About = () => {
   return (
-    <>
-      <HeroSection
-        title="ABOUT ME"
-        subtitle="Learn about my journey, coaching philosophy, and passion for developing young champions"
-        backgroundImage="/src/assets/images/hero/background.jpg"
-      />
+    <div className="min-h-screen">
+      <div
+        className="relative h-[60vh] bg-cover bg-center bg-no-repeat"
+        style={{
+          backgroundImage: `url(${getAssetPath('/src/assets/images/hero/background.jpg')})`,
+        }}
+      >
+        <HeroSection
+          title="ABOUT ME"
+          subtitle="Learn about my journey, coaching philosophy, and passion for developing young champions"
+        />
+      </div>
       
       <section className="container-custom">
         <div className="grid md:grid-cols-2 gap-16 items-center">
@@ -187,7 +194,7 @@ const About = () => {
           <p className="text-lg font-semibold">- Coach Ninja</p>
         </div>
       </section>
-    </>
+    </div>
   );
 };
 

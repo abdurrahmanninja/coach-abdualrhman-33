@@ -5,6 +5,7 @@ import ProgramCard from '@/components/ProgramCard';
 import TestimonialCard from '@/components/TestimonialCard';
 import GalleryCard from '@/components/GalleryCard';
 import { ArrowRight } from 'lucide-react';
+import { getAssetPath } from '@/lib/utils';
 
 const Index = () => {
   // Function to handle reveal animations
@@ -30,18 +31,32 @@ const Index = () => {
   }, []);
   
   return (
-    <>
-      <HeroSection
-        title="TRAIN LIKE A CHAMPION"
-        subtitle="Professional fighting coach specialized in training young champions for national and international competitions."
-        backgroundImage="/src/assets/images/hero/background.jpg"
-        buttonText="Start Your Journey"
-        buttonLink="/contact"
-      />
+    <div className="min-h-screen">
+      <div
+        className="relative h-[60vh] bg-cover bg-center bg-no-repeat"
+        style={{
+          backgroundImage: `url(${getAssetPath('/src/assets/images/hero/building.jpg')})`,
+        }}
+      >
+        <HeroSection
+          title="TRAIN LIKE A CHAMPION"
+          subtitle="Professional fighting coach specialized in training young champions for national and international competitions."
+          backgroundImage="/src/assets/images/hero/background.jpg"
+          buttonText="Start Your Journey"
+          buttonLink="/contact"
+        />
+      </div>
       
       {/* About Section */}
       <section className="container-custom">
-        <div className="grid md:grid-cols-2 gap-16 items-center">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
+          <div>
+            <img
+              src={getAssetPath('/src/assets/images/about/coach.jpg')}
+              alt="Coach Ninja"
+              className="rounded-lg shadow-lg"
+            />
+          </div>
           <div className="reveal-on-scroll opacity-0">
             <h2 className="section-title">Building Champions From The Ground Up</h2>
             <p className="text-gray-600 mb-6">
@@ -53,20 +68,6 @@ const Index = () => {
             <Link to="/about" className="btn-primary">
               Learn More About Me
             </Link>
-          </div>
-          
-          <div className="relative reveal-on-scroll opacity-0">
-            <div className="aspect-w-4 aspect-h-5 rounded-lg overflow-hidden shadow-xl">
-              <img 
-                src="/src/assets/images/hero/building.jpg"
-                alt="Coach teaching martial arts" 
-                className="object-cover w-full h-full"
-              />
-            </div>
-            <div className="absolute -bottom-6 -left-6 bg-coach-red text-white p-6 rounded-lg shadow-lg">
-              <p className="text-4xl font-bold">10+</p>
-              <p className="text-sm uppercase tracking-wide">Years Experience</p>
-            </div>
           </div>
         </div>
       </section>
@@ -238,7 +239,7 @@ const Index = () => {
           </div>
         </div>
       </section>
-    </>
+    </div>
   );
 };
 

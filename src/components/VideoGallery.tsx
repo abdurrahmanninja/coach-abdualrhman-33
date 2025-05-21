@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import { getAssetPath } from '@/lib/utils';
 
 interface VideoGalleryProps {
   title: string;
@@ -33,9 +34,9 @@ const VideoGallery = ({ title, description }: VideoGalleryProps) => {
               onClick={() => setSelectedVideo(video)}
             >
               <video
-                src={video}
+                src={getAssetPath(video)}
                 className="w-full h-64 object-cover"
-                poster={`/src/assets/videos/${index + 1}.jpg`}
+                poster={getAssetPath(`/src/assets/videos/${index + 1}.jpg`)}
               />
               <div className="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-30 transition-opacity duration-300 flex items-center justify-center">
                 <div className="w-16 h-16 bg-white bg-opacity-80 rounded-full flex items-center justify-center">
@@ -86,7 +87,7 @@ const VideoGallery = ({ title, description }: VideoGalleryProps) => {
               </svg>
             </button>
             <video
-              src={selectedVideo}
+              src={getAssetPath(selectedVideo)}
               controls
               className="w-full h-auto rounded-lg"
               autoPlay

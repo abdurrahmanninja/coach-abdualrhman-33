@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import { getAssetPath } from '@/lib/utils';
 
 interface GalleryCardProps {
   image: string;
@@ -21,7 +22,7 @@ const GalleryCard = ({ image, title, description, index }: GalleryCardProps) => 
     >
       <div className="aspect-w-4 aspect-h-3">
         <img 
-          src={`/src/assets/images/home-gallery/${index + 1}.jpg`}
+          src={getAssetPath(image)}
           alt={title} 
           className={`w-full h-full object-cover transition-transform duration-500 ${isHovered ? 'scale-110' : 'scale-100'}`}
         />
