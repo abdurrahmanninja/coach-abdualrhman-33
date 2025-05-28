@@ -31,14 +31,21 @@ const Index = () => {
   }, []);
   
   return (
-    <>
-      <HeroSection
-        title="TRAIN LIKE A CHAMPION"
-        subtitle="Professional fighting coach specialized in training young champions for national and international competitions."
-        backgroundImage="/src/assets/images/hero/background.jpg"
-        buttonText="Start Your Journey"
-        buttonLink="/contact"
-      />
+    <div className="min-h-screen">
+      <div
+        className="relative h-[60vh] bg-cover bg-center bg-no-repeat"
+        style={{
+          backgroundImage: `url(${getAssetPath('/src/assets/images/hero/building.jpg')})`,
+        }}
+      >
+        <HeroSection
+          title="TRAIN LIKE A CHAMPION"
+          subtitle="Professional fighting coach specialized in training young champions for national and international competitions."
+          backgroundImage={getAssetPath('images/hero/background.jpg')}
+          buttonText="Start Your Journey"
+          buttonLink="/contact"
+        />
+      </div>
       
       {/* About Section */}
       <section className="container-custom">
@@ -55,7 +62,6 @@ const Index = () => {
               Learn More About Me
             </Link>
           </div>
-          
           <div className="relative reveal-on-scroll opacity-0">
             <div className="aspect-w-4 aspect-h-5 rounded-lg overflow-hidden shadow-xl">
               <img 
@@ -239,7 +245,7 @@ const Index = () => {
           </div>
         </div>
       </section>
-    </>
+    </div>
   );
 };
 

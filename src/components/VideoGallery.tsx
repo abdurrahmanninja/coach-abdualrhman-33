@@ -87,7 +87,7 @@ const VideoGallery = ({ title, description }: VideoGalleryProps) => {
               </svg>
             </button>
             <video
-              src={selectedVideo}
+              src={getAssetPath(selectedVideo)}
               controls
               className="w-full h-auto rounded-lg"
               autoPlay

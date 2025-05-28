@@ -1,14 +1,20 @@
-
 import HeroSection from '@/components/HeroSection';
+import { getAssetPath } from '@/lib/utils';
 
 const About = () => {
   return (
-    <>
-      <HeroSection
-        title="ABOUT ME"
-        subtitle="Learn about my journey, coaching philosophy, and passion for developing young champions"
-        backgroundImage="https://images.unsplash.com/photo-1517438322307-e67111335449?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1920&q=80"
-      />
+    <div className="min-h-screen">
+      <div
+        className="relative h-[60vh] bg-cover bg-center bg-no-repeat"
+        style={{
+          backgroundImage: `url(${getAssetPath('/src/assets/images/hero/background.jpg')})`,
+        }}
+      >
+        <HeroSection
+          title="ABOUT ME"
+          subtitle="Learn about my journey, coaching philosophy, and passion for developing young champions"
+        />
+      </div>
       
       <section className="container-custom">
         <div className="grid md:grid-cols-2 gap-16 items-center">
@@ -185,10 +191,10 @@ const About = () => {
           <p className="text-xl mb-6">
             "My goal is not just to create champions in the ring, but to develop young people with the discipline, confidence, and resilience to succeed in all aspects of life. When a child learns to face challenges in training, they build the mental strength to overcome obstacles everywhere."
           </p>
-          <p className="text-lg font-semibold">- ChampionCoach</p>
+          <p className="text-lg font-semibold">- Coach Ninja</p>
         </div>
       </section>
-    </>
+    </div>
   );
 };
 
