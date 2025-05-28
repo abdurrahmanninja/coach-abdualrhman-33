@@ -41,7 +41,7 @@ const Index = () => {
         <HeroSection
           title="TRAIN LIKE A CHAMPION"
           subtitle="Professional fighting coach specialized in training young champions for national and international competitions."
-          backgroundImage={getAssetPath('images/hero/background.jpg')}
+          backgroundImage="images/hero/background.jpg"
           buttonText="Start Your Journey"
           buttonLink="/contact"
         />

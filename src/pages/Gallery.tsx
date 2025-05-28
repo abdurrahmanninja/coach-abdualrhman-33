@@ -4,12 +4,12 @@ import GalleryCard from '@/components/GalleryCard';
 import { getAssetPath } from '@/lib/utils';
 
 const galleryImages = [
-  '/src/assets/images/gallery/1.jpg',
-  '/src/assets/images/gallery/2.jpg',
-  '/src/assets/images/gallery/3.jpg',
-  '/src/assets/images/gallery/4.jpg',
-  '/src/assets/images/gallery/5.jpg',
-  '/src/assets/images/gallery/6.jpg',
+  'images/gallery/1.jpg',
+  'images/gallery/2.jpg',
+  'images/gallery/3.jpg',
+  'images/gallery/4.jpg',
+  'images/gallery/5.jpg',
+  'images/gallery/6.jpg',
 ];
 
 const Gallery = () => {
