@@ -14,7 +14,7 @@ const ImageGallery = ({ type, title, description }: ImageGalleryProps) => {
   const getImages = () => {
     const images = [];
     // For now, we'll use placeholder numbers. You can replace these with actual image imports
-    const imageCount = type === 'personal' ? 16 : 10; // 16 personal, 10 training
+    const imageCount = type === 'personal' ? 15 : 9; // 16 personal, 10 training
     for (let i = 1; i <= imageCount; i++) {
       images.push(getAssetPath(`images/${type}/${i}.jpg`));
     }
