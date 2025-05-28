@@ -1,8 +1,12 @@
-
 import { useState } from 'react';
 import { useLocation } from 'react-router-dom';
 import { useToast } from "@/hooks/use-toast";
 import { Phone, Mail } from 'lucide-react';
+import emailjs from 'emailjs-com';
+
+const SERVICE_ID = 'service_cok9sdv';
+const TEMPLATE_ID = 'template_69kfqx3';
+const PUBLIC_KEY = 'IeXosnPS4U8kmXUtN';
 
 const ContactForm = () => {
   const location = useLocation();
@@ -32,24 +36,28 @@ const ContactForm = () => {
     e.preventDefault();
     setIsSubmitting(true);
     
-    // Simulate form submission
-    setTimeout(() => {
-      console.log('Form submitted:', formData);
-      setIsSubmitting(false);
-      toast({
-        title: "Message sent!",
-        description: "Thank you for reaching out. We'll get back to you soon.",
+    emailjs.send(SERVICE_ID, TEMPLATE_ID, formData, PUBLIC_KEY)
+      .then(() => {
+        setIsSubmitting(false);
+        toast({
+          title: "Message sent!",
+          description: "Thank you for reaching out. We'll get back to you soon.",
+        });
+        setFormData({
+          name: '',
+          email: '',
+          phone: '',
+          subject: '',
+          message: '',
+        });
+      })
+      .catch(() => {
+        setIsSubmitting(false);
+        toast({
+          title: "Error",
+          description: "There was a problem sending your message. Please try again later.",
+        });
       });
-      
-      // Reset form
-      setFormData({
-        name: '',
-        email: '',
-        phone: '',
-        subject: '',
-        message: '',
-      });
-    }, 1000);
   };
   
   return (
@@ -67,7 +75,7 @@ const ContactForm = () => {
                 name="name"
                 value={formData.name}
                 onChange={handleChange}
-                className="w-full px-4 py-3 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-coach-blue"
+                className="w-full px-4 py-3 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-coach-blue bg-white text-black dark:bg-gray-900 dark:text-white"
                 required
               />
             </div>
@@ -82,7 +90,7 @@ const ContactForm = () => {
                 name="email"
                 value={formData.email}
                 onChange={handleChange}
-                className="w-full px-4 py-3 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-coach-blue"
+                className="w-full px-4 py-3 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-coach-blue bg-white text-black dark:bg-gray-900 dark:text-white"
                 required
               />
             </div>
@@ -99,7 +107,7 @@ const ContactForm = () => {
                 name="phone"
                 value={formData.phone}
                 onChange={handleChange}
-                className="w-full px-4 py-3 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-coach-blue"
+                className="w-full px-4 py-3 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-coach-blue bg-white text-black dark:bg-gray-900 dark:text-white"
               />
             </div>
             
@@ -112,7 +120,7 @@ const ContactForm = () => {
                 name="subject"
                 value={formData.subject}
                 onChange={handleChange}
-                className="w-full px-4 py-3 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-coach-blue"
+                className="w-full px-4 py-3 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-coach-blue bg-white text-black dark:bg-gray-900 dark:text-white"
                 required
               >
                 <option value="">Select a Program</option>
@@ -136,7 +144,7 @@ const ContactForm = () => {
               value={formData.message}
               onChange={handleChange}
               rows={5}
-              className="w-full px-4 py-3 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-coach-blue"
+              className="w-full px-4 py-3 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-coach-blue bg-white text-black dark:bg-gray-900 dark:text-white"
               required
             ></textarea>
           </div>
@@ -162,7 +170,7 @@ const ContactForm = () => {
               <Phone className="mr-3 text-coach-blue" size={20} />
               <div>
                 <p className="font-medium">Phone</p>
-                <p className="text-gray-600">+1 (123) 456-7890</p>
+                <p className="text-gray-600">+90 539 590 01 54</p>
               </div>
             </div>
             
@@ -170,7 +178,7 @@ const ContactForm = () => {
               <Mail className="mr-3 text-coach-blue" size={20} />
               <div>
                 <p className="font-medium">Email</p>
-                <p className="text-gray-600">coach@championcoach.com</p>
+                <p className="text-gray-600">kungfun63@gmail.com</p>
               </div>
             </div>
           </div>

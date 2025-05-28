@@ -37,8 +37,8 @@ const Footer = () => {
           <div>
             <h4 className="text-lg font-semibold mb-4">Contact</h4>
             <ul className="space-y-2 text-gray-400">
-              <li>Email: info@coachninja.com</li>
-              <li>Phone: +1 (555) 123-4567</li>
+              <li>Email: kungfun63@gmail.com</li>
+              <li>Phone: +90 539 590 01 54</li>
               <li>Location: 123 Training Street, Sports City</li>
             </ul>
           </div>

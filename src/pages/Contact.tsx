@@ -23,7 +23,7 @@ const Contact = () => {
                   type="text"
                   id="name"
                   name="name"
-                  className="w-full px-4 py-2 border border-gray-300 dark:border-coach-dark-border rounded-md focus:outline-none focus:ring-2 focus:ring-coach-blue dark:bg-coach-dark-input dark:text-white"
+                  className="w-full px-4 py-2 border border-gray-300 dark:border-coach-dark-border rounded-md focus:outline-none focus:ring-2 focus:ring-coach-blue bg-white text-black dark:bg-gray-900 dark:text-white"
                   required
                 />
               </div>
@@ -36,7 +36,7 @@ const Contact = () => {
                   type="email"
                   id="email"
                   name="email"
-                  className="w-full px-4 py-2 border border-gray-300 dark:border-coach-dark-border rounded-md focus:outline-none focus:ring-2 focus:ring-coach-blue dark:bg-coach-dark-input dark:text-white"
+                  className="w-full px-4 py-2 border border-gray-300 dark:border-coach-dark-border rounded-md focus:outline-none focus:ring-2 focus:ring-coach-blue bg-white text-black dark:bg-gray-900 dark:text-white"
                   required
                 />
               </div>
@@ -49,7 +49,7 @@ const Contact = () => {
                   type="tel"
                   id="phone"
                   name="phone"
-                  className="w-full px-4 py-2 border border-gray-300 dark:border-coach-dark-border rounded-md focus:outline-none focus:ring-2 focus:ring-coach-blue dark:bg-coach-dark-input dark:text-white"
+                  className="w-full px-4 py-2 border border-gray-300 dark:border-coach-dark-border rounded-md focus:outline-none focus:ring-2 focus:ring-coach-blue bg-white text-black dark:bg-gray-900 dark:text-white"
                 />
               </div>
               
@@ -61,7 +61,7 @@ const Contact = () => {
                   id="message"
                   name="message"
                   rows={4}
-                  className="w-full px-4 py-2 border border-gray-300 dark:border-coach-dark-border rounded-md focus:outline-none focus:ring-2 focus:ring-coach-blue dark:bg-coach-dark-input dark:text-white"
+                  className="w-full px-4 py-2 border border-gray-300 dark:border-coach-dark-border rounded-md focus:outline-none focus:ring-2 focus:ring-coach-blue bg-white text-black dark:bg-gray-900 dark:text-white"
                   required
                 ></textarea>
               </div>
@@ -145,7 +145,7 @@ const Contact = () => {
                   </svg>
                   <div>
                     <h3 className="font-semibold text-gray-900 dark:text-coach-dark-text-primary">Email</h3>
-                    <p className="text-gray-600 dark:text-coach-dark-text-secondary">ninja@gmail.com</p>
+                    <p className="text-gray-600 dark:text-coach-dark-text-secondary">kungfun63@gmail.com</p>
                   </div>
                 </div>
               </div>

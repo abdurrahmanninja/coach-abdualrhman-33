@@ -16,7 +16,7 @@ const Programs = () => {
         "Safety-first approach",
         "2 sessions per week"
       ],
-      price: "Monthly",
+      price: "$120",
       image: "/src/assets/images/programs/beginners.jpg",
       ageRange: "8-10 years",
       slug: "beginners"
@@ -31,7 +31,7 @@ const Programs = () => {
         "Mental strength development",
         "3 sessions per week"
       ],
-      price: "Monthly",
+      price: "$150",
       image: "/src/assets/images/programs/intermediate.jpg",
       ageRange: "11-13 years",
       slug: "intermediate"
@@ -46,7 +46,7 @@ const Programs = () => {
         "Strategy development",
         "4-5 sessions per week"
       ],
-      price: "Monthly",
+      price: "$180",
       image: "/src/assets/images/programs/advanced.jpg",
       ageRange: "14-15 years",
       slug: "advanced"
@@ -61,7 +61,7 @@ const Programs = () => {
         "Video analysis",
         "Customized schedule"
       ],
-      price: "Monthly",
+      price: "$200",
       image: "/src/assets/images/programs/championship.jpg",
       ageRange: "14-15 years",
       slug: "championship"
