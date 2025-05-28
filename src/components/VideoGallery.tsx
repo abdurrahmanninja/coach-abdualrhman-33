@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import { getAssetPath } from '@/lib/utils';
 
 interface VideoGalleryProps {
   title: string;
@@ -12,7 +13,7 @@ const VideoGallery = ({ title, description }: VideoGalleryProps) => {
   const getVideos = () => {
     const videos = [];
     for (let i = 1; i <= 3; i++) {
-      videos.push(`/src/assets/videos/${i}.mp4`);
+      videos.push(getAssetPath(`videos/${i}.mp4`));
     }
     return videos;
   };
@@ -35,7 +36,7 @@ const VideoGallery = ({ title, description }: VideoGalleryProps) => {
               <video
                 src={video}
                 className="w-full h-64 object-cover"
-                poster={`/src/assets/videos/${index + 1}.jpg`}
+                poster={getAssetPath(`videos/${index + 1}.jpg`)}
               />
               <div className="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-30 transition-opacity duration-300 flex items-center justify-center">
                 <div className="w-16 h-16 bg-white bg-opacity-80 rounded-full flex items-center justify-center">

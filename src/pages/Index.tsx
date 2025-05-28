@@ -5,6 +5,7 @@ import ProgramCard from '@/components/ProgramCard';
 import TestimonialCard from '@/components/TestimonialCard';
 import GalleryCard from '@/components/GalleryCard';
 import { ArrowRight } from 'lucide-react';
+import { getAssetPath } from '@/lib/utils';
 
 const Index = () => {
   // Function to handle reveal animations
@@ -58,7 +59,7 @@ const Index = () => {
           <div className="relative reveal-on-scroll opacity-0">
             <div className="aspect-w-4 aspect-h-5 rounded-lg overflow-hidden shadow-xl">
               <img 
-                src="/src/assets/images/hero/building.jpg"
+                src={getAssetPath('images/hero/building.jpg')}
                 alt="Coach teaching martial arts" 
                 className="object-cover w-full h-full"
               />
@@ -157,21 +158,21 @@ const Index = () => {
         
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
           <GalleryCard
-            image="/src/assets/images/home-gallery/1.jpg"
+            image={getAssetPath('images/home-gallery/1.jpg')}
             title="Championship Finals"
             description="Our students competing at the national championship"
             index={0}
           />
           
           <GalleryCard
-            image="/src/assets/images/home-gallery/2.jpg"
+            image={getAssetPath('images/home-gallery/2.jpg')}
             title="Group Training"
             description="Weekly group training session for intermediate students"
             index={1}
           />
           
           <GalleryCard
-            image="/src/assets/images/home-gallery/3.jpg"
+            image={getAssetPath('images/home-gallery/3.jpg')}
             title="One-on-One Coaching"
             description="Personalized technique refinement with advanced students"
             index={2}

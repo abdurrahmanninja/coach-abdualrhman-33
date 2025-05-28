@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import { getAssetPath } from '@/lib/utils';
 
 interface ImageGalleryProps {
   type: 'personal' | 'training';
@@ -15,7 +16,7 @@ const ImageGallery = ({ type, title, description }: ImageGalleryProps) => {
     // For now, we'll use placeholder numbers. You can replace these with actual image imports
     const imageCount = type === 'personal' ? 6 : 6; // Adjust these numbers based on your actual image count
     for (let i = 1; i <= imageCount; i++) {
-      images.push(`/src/assets/images/${type}/${i}.jpg`);
+      images.push(getAssetPath(`images/${type}/${i}.jpg`));
     }
     return images;
   };

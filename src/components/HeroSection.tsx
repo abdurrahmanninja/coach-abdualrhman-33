@@ -1,5 +1,6 @@
 import { ArrowRight } from 'lucide-react';
 import { Link } from 'react-router-dom';
+import { getAssetPath } from '@/lib/utils';
 
 interface HeroSectionProps {
   title: string;
@@ -12,7 +13,7 @@ interface HeroSectionProps {
 const HeroSection = ({
   title,
   subtitle,
-  backgroundImage = "/src/assets/images/hero/backgroundHero.jpg",
+  backgroundImage = "images/hero/background.jpg",
   buttonText = "Learn More",
   buttonLink = "/about",
 }: HeroSectionProps) => {
@@ -20,7 +21,7 @@ const HeroSection = ({
     <div 
       className="relative min-h-screen flex items-center justify-center text-white overflow-hidden" 
       style={{ 
-        background: `linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(${backgroundImage})`,
+        background: `linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(${getAssetPath(backgroundImage)})`,
         backgroundSize: 'cover',
         backgroundPosition: 'center',
       }}

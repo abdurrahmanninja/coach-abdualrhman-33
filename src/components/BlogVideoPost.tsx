@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import { getAssetPath } from '@/lib/utils';
 
 interface BlogVideoPostProps {
   title: string;
@@ -21,7 +22,7 @@ const BlogVideoPost = ({ title, content, videoNumber, date, index }: BlogVideoPo
         {!isPlaying ? (
           <>
             <img
-              src={`/src/assets/images/blog-thumbnails/${videoNumber}.jpg`}
+              src={getAssetPath(`images/blog-thumbnails/${videoNumber}.jpg`)}
               alt={`Thumbnail for ${title}`}
               className="absolute top-0 left-0 w-full h-full object-cover"
             />
@@ -47,7 +48,7 @@ const BlogVideoPost = ({ title, content, videoNumber, date, index }: BlogVideoPo
           </>
         ) : (
           <video
-            src={`/src/assets/videos/blog/${videoNumber}.mp4`}
+            src={getAssetPath(`videos/blog/${videoNumber}.mp4`)}
             className="absolute top-0 left-0 w-full h-full object-contain"
             controls
             autoPlay
