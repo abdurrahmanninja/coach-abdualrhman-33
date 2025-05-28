@@ -15,24 +15,24 @@ const GalleryCard = ({ image, title, description, index }: GalleryCardProps) => 
 
   return (
     <div 
-      className="relative overflow-hidden rounded-lg shadow-md opacity-0 animate-fade-in-up card-hover"
+      className="relative overflow-hidden rounded-lg shadow-md opacity-0 animate-fade-in-up card-hover bg-white dark:bg-coach-dark-card"
       style={{ animationDelay }}
       onMouseEnter={() => setIsHovered(true)}
       onMouseLeave={() => setIsHovered(false)}
     >
-      <div className="aspect-w-4 aspect-h-3">
+      <div className="w-full aspect-[4/3] bg-gray-200 dark:bg-gray-800 overflow-hidden">
         <img 
-          src={getAssetPath(`images/home-gallery/${index + 1}.jpg`)}
+          src={image}
           alt={title} 
-          className={`w-full h-full object-cover transition-transform duration-500 ${isHovered ? 'scale-110' : 'scale-100'}`}
+          className="w-full h-full object-cover transition-transform duration-500 hover:scale-105"
         />
       </div>
       <div 
-        className={`absolute inset-0 bg-gradient-to-t ${isHovered ? 'from-black/90 via-black/50' : 'from-black/70 to-transparent'} transition-opacity duration-300 flex flex-col justify-end p-5 text-white`}
+        className={`absolute inset-0 bg-gradient-to-t ${isHovered ? 'from-black/90 via-black/50' : 'from-black/70 to-transparent'} transition-opacity duration-300 flex flex-col justify-end p-5 text-white pointer-events-none`}
       >
         <h3 className="text-xl font-bold mb-2">{title}</h3>
         {description && isHovered && (
-          <p className="text-sm text-gray-200 opacity-0 transform translate-y-4 transition-all duration-300" style={{ opacity: isHovered ? 1 : 0, transform: isHovered ? 'translateY(0)' : 'translateY(10px)' }}>
+          <p className="text-sm text-gray-200 opacity-100 transform translate-y-0 transition-all duration-300">
             {description}
           </p>
         )}
